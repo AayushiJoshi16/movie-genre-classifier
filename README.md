@@ -1,102 +1,141 @@
-# Movie Genre Classification
+Movie Genre Classification
+Project Description
+This project focuses on developing a machine learning model that can classify movies into different genres based on their textual descriptions.
+Given a dataset of movie plot summaries, the task is to clean and preprocess the text, vectorize it, and train a classifier to predict genres accurately.
 
-## 🎯 Project Objective
+The model ultimately allows the user to input any movie description and instantly predict the most likely genre.
 
-The goal of this project is to build a machine learning model capable of classifying movies into their correct genres based solely on the textual descriptions of their plots.
+Technologies Used:
+Python
 
-### 🔍 Key Requirements:
-- Process text-based movie plot descriptions into a clean, structured format.
-- Apply text preprocessing techniques such as tokenization, stopword removal, and stemming.
-- Convert cleaned text into numerical features using vectorization (e.g., CountVectorizer).
-- Explore and evaluate multiple classification algorithms (e.g., Naive Bayes) to determine the most effective model.
-- Train the model using a labeled dataset (with genres) and test its performance using a separate test dataset.
+Pandas
 
-### ✅ Expected Outcome:
-A well-trained and accurate classifier that can predict the genre of a movie based on its plot summary. This tool can assist movie platforms or users in auto-tagging movies by genre using only the plot description.
+Scikit-learn
 
-## 🛠️ Technologies Used
+NLTK (Natural Language Toolkit)
 
-- **Python**: Main programming language used for data manipulation, model training, and evaluation.
-- **Scikit-learn**: Library used for implementing machine learning algorithms.
-- **NLTK**: Natural language processing library for tokenization, stopword removal, and stemming.
-- **Pandas**: Library for data manipulation and cleaning.
-- **Matplotlib / Seaborn**: Visualization libraries for performance evaluation.
-- **Jupyter Notebook/VS Code**: Development environments used for coding.
+Matplotlib & Seaborn (for visualization)
 
-## 📝 Project Description
+ipywidgets (for GUI input)
 
-In this project, we aim to classify movies into various genres (e.g., Drama, Thriller, Comedy) based on their plot descriptions. The following steps were undertaken to build the model:
+Dataset Details
+The datasets used are:
 
-### 1. Data Preprocessing
-- **Text cleaning**: The movie descriptions are cleaned by removing URLs, special characters, and stopwords.
-- **Tokenization**: The descriptions are tokenized into words to prepare them for vectorization.
-- **Stemming**: Words are reduced to their root form to improve the quality of input to the model.
+train_data.csv: Contains movie descriptions and their corresponding genres (for training).
 
-### 2. Model Training
-We used **Multinomial Naive Bayes** as the classifier, which is suitable for text classification tasks. The cleaned descriptions are vectorized using **CountVectorizer** to convert text into numerical features.
+test_data.csv: Contains movie descriptions without genres (for prediction).
 
-### 3. Model Evaluation
-The model was tested using a separate test dataset, and its performance was evaluated based on accuracy.
+test_data_solution.csv: Contains the correct genres for the test data (for evaluating accuracy).
 
-## 🧩 Code Structure
+Source: Kaggle - Movie Genre Classification
 
-- **data_cleaning.py**: Contains functions for cleaning and preprocessing the data.
-- **model_training.py**: Code for training the model using a Naive Bayes classifier and testing it on the test data.
-- **predict_genre.py**: Code that allows users to input movie descriptions and predict their genres using the trained model.
-- **requirements.txt**: Lists all the Python libraries required to run the project.
+ Project Workflow
+1. Importing Libraries
+Essential libraries are imported to handle data reading, text processing, machine learning model building, and visualizations.
 
-## 📥 Dataset
+2. Loading the Data
+Training, testing, and testing solution datasets are loaded using Pandas.
 
-The dataset used in this project is the **Movie Genre Classification** dataset from Kaggle. It contains movie titles, descriptions, and their corresponding genres. You can find the dataset [here](https://www.kaggle.com/code/youssefelbadry10/movie-genre-classification/input).
+Sample rows from training data are printed to confirm successful loading.
 
-## ⚙️ How to Run the Code
+3. Data Cleaning
+Text descriptions are cleaned by:
 
-### Step 1: Install Dependencies
-You will need Python 3.x installed along with the following libraries:
-```bash
-pip install -r requirements.txt
-```
+Lowercasing the text.
 
-### Step 2: Load the Dataset
-Download the dataset from the provided link and save the CSV files in your project directory.
+Removing links, mentions, and non-alphabet characters.
 
-### Step 3: Run the Model
-You can train the model by running the following command:
+Removing punctuation.
+
+Tokenizing words and removing common stopwords.
+
+This is done using NLTK tools like LancasterStemmer, stopwords, and regex functions.
+
+4. Label Encoding
+The movie genres (text labels like "Comedy", "Drama") are converted into numbers using LabelEncoder from Scikit-learn.
+
+The original 'GENRE' column is dropped after encoding.
+
+5. Model Building
+A Pipeline is created consisting of:
+
+CountVectorizer: Converts text into numerical feature vectors.
+
+MultinomialNB (Naive Bayes Classifier): Trains a model on these vectors.
+
+6. Training the Model
+The cleaned descriptions and encoded genres are used to train the model.
+
+7. Testing the Model
+The model predicts genres for the test dataset.
+
+Predictions are compared to the true labels to calculate accuracy.
+
+Accuracy is printed to evaluate model performance.
+
+8. Example Predictions
+Two manually written movie descriptions are passed through the trained model.
+
+Their predicted genres are printed for demonstration.
+
+9. User Input (Interactive GUI)
+Using ipywidgets, a simple interface is created where users can:
+
+Input any movie description.
+
+Click a "PREDICT" button.
+
+View the predicted genre.
+
+Model Performance
+The model’s accuracy is calculated based on the predictions for the test dataset and compared against the true genres.
+Accuracy achieved is displayed in the console.
+
+How to Run the Project
+Clone or download the project files into your local system.
+
+Open the folder in VS Code.
+
+Install the required libraries if not already installed:
+
 bash
 Copy
 Edit
-python model_training.py
+pip install pandas scikit-learn nltk matplotlib seaborn ipywidgets
+Make sure the dataset files (train_data.csv, test_data.csv, test_data_solution.csv) are present in the same directory.
 
-### Step 4: Make Predictions
-Once the model is trained, you can use it to predict the genre of a movie by providing a movie description. You can run the following code to predict a genre:
+Run the Python file:
+
 bash
 Copy
 Edit
-python predict_genre.py
+python genre_classifier.py
+Enter any movie description into the input box and press the "PREDICT" button to get the genre.
 
-### Step 5: Evaluate the Model
-The model's accuracy will be printed to the console after training.
-
-🔬 Model Performance
-The current model uses the Multinomial Naive Bayes algorithm, achieving an accuracy of 53.75% on the test set.
-
-📊 Results:
-Accuracy: 53.75%
-
-The model performs well, but future improvements can be made by exploring other algorithms, vectorization methods, and hyperparameter tuning.
-
-📝 How to Contribute
-If you would like to contribute to this project, feel free to fork the repository, create a new branch, and submit a pull request. All contributions are welcome!
-
-📄 License
-This project is licensed under the MIT License.
-markdown
+ Folder Structure
 Copy
 Edit
+movie_genre_classifier/
+├── train_data.csv
+├── test_data.csv
+├── test_data_solution.csv
+├── genre_classifier.py
+├── README.md
+Key Highlights
+End-to-end machine learning pipeline built using simple techniques.
 
-### Key Points Covered:
-- **Project Objective**: Clearly states the goal and what is expected.
-- **Technologies Used**: Lists the main libraries and tools you used.
-- **Project Description**: Explains the steps involved in data preprocessing, model training, and evaluation.
-- **How to Run the Code**: Step-by-step instructions for setting up and running the code, including installing dependencies and running Python scripts.
-- **Model Performance**: Mentions the achieved accuracy and encourages future improvements.
+Text preprocessing with custom cleaning function.
+
+User-interactive prediction GUI using ipywidgets.
+
+Real dataset used for training and evaluation.
+
+Modular and beginner-friendly codebase for easy understanding and extension.
+
+Acknowledgements
+Kaggle Dataset Contributor: Youssefelbadry10
+
+Libraries: Scikit-learn, NLTK, Matplotlib, Seaborn, ipywidgets
+
+Note
+This project is ideal for beginners in Machine Learning and Natural Language Processing (NLP) who want hands-on experience with a real-world classification problem!
