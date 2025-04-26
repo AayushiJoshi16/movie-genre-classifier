@@ -6,7 +6,8 @@ Given a dataset of movie plot summaries, the task is to clean and preprocess the
 
 The model ultimately allows the user to input any movie description and instantly predict the most likely genre.
 
-**Technologies Used:*
+*Technologies Used:*
+
 --Python
 
 --Pandas
@@ -19,7 +20,7 @@ The model ultimately allows the user to input any movie description and instantl
 
 --ipywidgets (for GUI input)
 
-**Dataset Details*
+*Dataset Details*
 The datasets used are:
 
 --train_data.csv: Contains movie descriptions and their corresponding genres (for training).
@@ -30,7 +31,7 @@ The datasets used are:
 
 --Source: Kaggle - Movie Genre Classification
 
- **Project Workflow*
+ *Project Workflow*
 1. Importing Libraries
 Essential libraries are imported to handle data reading, text processing, machine learning model building, and visualizations.
 
@@ -88,11 +89,11 @@ Click a "PREDICT" button.
 
 View the predicted genre.
 
-**Model Performance*
+*Model Performance*
 The model’s accuracy is calculated based on the predictions for the test dataset and compared against the true genres.
 Accuracy achieved is displayed in the console.
 
-**How to Run the Project*
+*How to Run the Project*
 Clone or download the project files into your local system.
 
 Open the folder in VS Code.
@@ -113,7 +114,8 @@ Run the Python file:
 --python genre_classifier.py
 --Enter any movie description into the input box and press the "PREDICT" button to get the genre.
 
- **Folder Structure*
+ *Folder Structure*
+ 
 Copy
 Edit
 movie_genre_classifier/
@@ -128,7 +130,7 @@ movie_genre_classifier/
 
 ├── README.md
 
-**Key Highlights*
+*Key Highlights*
 End-to-end machine learning pipeline built using simple techniques.
 
 Text preprocessing with custom cleaning function.
@@ -139,10 +141,10 @@ Real dataset used for training and evaluation.
 
 Modular and beginner-friendly codebase for easy understanding and extension.
 
-**Acknowledgements*
+*Acknowledgements*
 Kaggle Dataset Contributor: Youssefelbadry10
 
 Libraries: Scikit-learn, NLTK, Matplotlib, Seaborn, ipywidgets
 
-**Note*
+*Note*
 This project is ideal for beginners in Machine Learning and Natural Language Processing (NLP) who want hands-on experience with a real-world classification problem!
