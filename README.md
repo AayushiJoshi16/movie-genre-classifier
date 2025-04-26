@@ -1,4 +1,4 @@
-Movie Genre Classification
+**Movie Genre Classification**
 
 Project Description
 This project focuses on developing a machine learning model that can classify movies into different genres based on their textual descriptions.
