@@ -55,6 +55,7 @@ The dataset used in this project is the **Movie Genre Classification** dataset f
 You will need Python 3.x installed along with the following libraries:
 ```bash
 pip install -r requirements.txt
+```
 
 ### Step 2: Load the Dataset
 Download the dataset from the provided link and save the CSV files in your project directory.
