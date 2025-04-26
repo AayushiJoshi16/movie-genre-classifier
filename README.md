@@ -20,6 +20,7 @@ The model ultimately allows the user to input any movie description and instantl
 
 --ipywidgets (for GUI input)
 
+
 ***Dataset Details***
 
 The datasets used are:
@@ -31,6 +32,7 @@ The datasets used are:
 --test_data_solution.csv: Contains the correct genres for the test data (for evaluating accuracy).
 
 --Source: Kaggle - Movie Genre Classification
+
 
  ***Project Workflow***
 
@@ -100,10 +102,12 @@ The datasets used are:
 
      View the predicted genre.
 
+
 ***Model Performance***
 
 The model’s accuracy is calculated based on the predictions for the test dataset and compared against the true genres.
 Accuracy achieved is displayed in the console.
+
 
 ***How to Run the Project***
 
@@ -135,7 +139,8 @@ Run the Python file:
 
 --Enter any movie description into the input box and press the "PREDICT" button to get the genre.
 
- *Folder Structure*
+ 
+ ***Folder Structure***
  
 Copy
 
@@ -153,6 +158,7 @@ movie_genre_classifier/
 
 ├── README.md
 
+
 ***Key Highlights***
 
 End-to-end machine learning pipeline built using simple techniques.
@@ -165,11 +171,13 @@ Real dataset used for training and evaluation.
 
 Modular and beginner-friendly codebase for easy understanding and extension.
 
+
 ***Acknowledgements***
 
 Kaggle Dataset Contributor: Youssefelbadry10
 
 Libraries: Scikit-learn, NLTK, Matplotlib, Seaborn, ipywidgets
+
 
 ***Note***
 
